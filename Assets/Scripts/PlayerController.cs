@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour 
 {
-
+    public TMP_Text countText;
+    
     public float speed = 10.0f;
     private Rigidbody rb;
+    private int count;
 
     // Holds movement x and y
     private float movementX;
@@ -14,7 +17,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
+        count = 0; // Set counter to 0
+        SetCountText();
         rb = GetComponent<Rigidbody>(); // Sets rigibody component to rb
         
     }
@@ -44,7 +48,16 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+
+            // add 1 to the score
+            count++;
+            SetCountText();
         }
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
     }
 
 }
