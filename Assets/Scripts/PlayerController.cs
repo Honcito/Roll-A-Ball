@@ -2,47 +2,49 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
     public TMP_Text countText;
     public TMP_Text wintText;
-    
+
     public float speed = 10.0f;
+    public float jumpForce = 5.0f;  // Fuerza del salto
     private Rigidbody rb;
     private int count;
 
-    // Holds movement x and y
     private float movementX;
     private float movementY;
 
-    // Start is called before the first frame update
+    private bool isGrounded;
+
     private void Start()
     {
-        count = 0; // Set counter to 0
+        count = 20;
         SetCountText();
-        rb = GetComponent<Rigidbody>(); // Sets rigibody component to rb
+        rb = GetComponent<Rigidbody>();
         wintText.gameObject.SetActive(false);
-        
     }
 
     private void OnMove(InputValue movementValue)
     {
-        
-        // Create a vector 2 variable and store the x and y movement values in it
         Vector2 movementVector = movementValue.Get<Vector2>();
-
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
 
-
-    // Update is called once per frame
     private void FixedUpdate()
     {
-        // Set the movement to the x and z variables (keep y at 0)
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         rb.AddForce(movement * speed);
-        
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;  // Evita múltiples saltos
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,20 +52,27 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
-
-            // add 1 to the score
-            count++;
+            count--;
             SetCountText();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica si la bola está en contacto con el Terrain
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            Debug.Log("Grounded: " + isGrounded); // Esto debería imprimirse en la consola   
         }
     }
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 12)
+        countText.text = "Pikups left to win: " + count.ToString();
+        if (count == 0)
         {
             wintText.gameObject.SetActive(true);
         }
     }
-
 }
