@@ -27,15 +27,18 @@ This is a simple collection game developed in Unity. The player must gather all 
 
 You can download the executable of the game from the following link:
 
-[Download Game Executable](https://drive.google.com/drive/folders/1pVTB3ID02dq0UXL46tIDDXlVUdYYb3AG?usp=drive_link)
+[Download Game Executable](https://drive.google.com/drive/folders/1ujsXL7NyVxbbGmUqS0q0F5he5HRBCMX_?usp=drive_link)
+
+Execute Roll A Ball.exe
 
 
-## Installation
+## Installation for Unity
 
-1. Clone the repository or download the ZIP file of the project.
-2. Open Unity Hub and select "Open Project."
-3. Navigate to the project folder and select it.
-4. Ensure all required packages are installed via the Package Manager.
+1. Install Unity (https://unity.com/es)
+2. Clone the repository or download the ZIP file of the project.
+3. Open Unity Hub and select "Open Project."
+4. Navigate to the project folder and select it.
+5. Ensure all required packages are installed via the Package Manager.
 
 ## Gameplay
 
