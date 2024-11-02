@@ -6,44 +6,34 @@ public class PlayerController : MonoBehaviour
 {
     public TMP_Text countText;
     public TMP_Text wintText;
+    public TMP_Text loseText;
 
     public float speed = 10.0f;
-    public float jumpForce = 5.0f;  // Fuerza del salto
+    public float jumpForce = 5.0f;
     private Rigidbody rb;
-    private int count;
+    private int count = 20;
 
     private float movementX;
     private float movementY;
 
     private bool isGrounded;
+    private bool isGameOver; // Para manejar el estado del juego
 
     private void Start()
     {
-        count = 20;
         SetCountText();
         rb = GetComponent<Rigidbody>();
         wintText.gameObject.SetActive(false);
-    }
-
-    private void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        loseText.gameObject.SetActive(false);
+        isGameOver = false; // Inicializa el estado del juego
     }
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
-    }
-
-    private void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (!isGameOver) // Solo mueve al jugador si el juego no ha terminado
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;  // Evita múltiples saltos
+            Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+            rb.AddForce(movement * speed);
         }
     }
 
@@ -53,26 +43,39 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count--;
-            SetCountText();
+            SetCountText(); // Actualiza el contador
         }
+    }
+
+    private void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+        movementX = movementVector.x;
+        movementY = movementVector.y;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Verifica si la bola está en contacto con el Terrain
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            isGrounded = true;
-            Debug.Log("Grounded: " + isGrounded); // Esto debería imprimirse en la consola   
+            // Marca que el juego ha terminado y muestra el mensaje de derrota
+            isGameOver = true;
+            loseText.gameObject.SetActive(true);
+            loseText.text = "You lose!!!";
+            // Desactivar el player
+            Destroy(gameObject);
         }
     }
 
     void SetCountText()
     {
-        countText.text = "Pikups left to win: " + count.ToString();
-        if (count == 0)
+        countText.text = "Pickups left to win: " + count.ToString();
+        if (count <= 0)
         {
+            isGameOver = true; // Marca que el juego ha terminado
             wintText.gameObject.SetActive(true);
+            wintText.text = "You Win!!!";
+            // Aquí podrías añadir lógica para reiniciar el juego o mostrar un menú después
         }
     }
 }
