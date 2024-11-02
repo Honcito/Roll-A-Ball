@@ -51,7 +51,7 @@ The game features two main scenarios:
 
 ## Controls
 
-- **Movement**: Use the **WASD** or **ARROW KEYS** keys or arrow keys to move the player.
+- **Movement**: Use the **WASD** keys or arrow keys to move the player.
 - **Jump**: Press the **Spacebar** to jump.
 - **Collect pickups**: Walk over the collectible items to gather them.
 
