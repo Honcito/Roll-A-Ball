@@ -1,4 +1,4 @@
-# Game Title
+# Roll a Ball
 
 This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of two scenarios: an initial scenario and an open terrain.
 
@@ -14,8 +14,7 @@ This is a simple collection game developed in Unity. The player must gather all 
 
 ## Requirements
 
-- Unity 2021.x or higher.
-- Any additional Unity packages used in the project (if applicable).
+- Unity 2022.3.50f1 or higher.
 
 ## Installation
 
