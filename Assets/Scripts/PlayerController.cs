@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+//using UnityEngine.UI;
+//using System.Threading;
 
 public class PlayerController : MonoBehaviour
 {
     public TMP_Text countText;
     public TMP_Text wintText;
     public TMP_Text loseText;
+    //public TMP_InputField playerNameInput;
+    //public Button startButton;
+
+    private string playerName;
+
+    //private bool isTiming;
+    //private float timer;
 
     public float speed = 10.0f;
     public float jumpForce = 5.0f;
@@ -26,14 +35,36 @@ public class PlayerController : MonoBehaviour
         wintText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
         isGameOver = false; // Inicializa el estado del juego
+
+      
     }
 
+   /* public void StartGame()
+    {
+        // Obtener el nombre del jugador en el Input Field
+        playerName = playerNameInput.text;
+
+        // Ocultar el Input Field y el botón de inicio
+        playerNameInput.gameObject.SetActive(false );
+        startButton.gameObject.SetActive(false);
+
+        // Iniciar el cronómetro
+        isTiming = true;
+        // Reiniciar el tiempo
+        timer = 0.0f;
+    }*/
+    
     private void FixedUpdate()
     {
         if (!isGameOver) // Solo mueve al jugador si el juego no ha terminado
         {
             Vector3 movement = new Vector3(movementX, 0.0f, movementY);
             rb.AddForce(movement * speed);
+
+            if (isGrounded && Keyboard.current.spaceKey.wasPressedThisFrame) // Verifica si está en el suelo y si se presionó la tecla de espacio
+            {
+                Jump();
+            }
         }
     }
 
@@ -78,4 +109,29 @@ public class PlayerController : MonoBehaviour
             // Aquí podrías añadir lógica para reiniciar el juego o mostrar un menú después
         }
     }
-}
+
+    // Método para hacer que el jugador salte
+    private void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // Aplica una fuerza hacia arriba
+        isGrounded = false; // Marca que ya no está en el suelo
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        // Verificar si el jugador está tocando el suelo
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Terrain"))
+        {
+            isGrounded = true; // El jugador está en el suelo
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // Cuando el jugador deja de tocar el suelo
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Terrain"))
+        {
+            isGrounded = false; // El jugador ya no está en el suelo
+        }
+    }
+ }

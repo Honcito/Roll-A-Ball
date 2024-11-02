@@ -12,5 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: 171ffa06ef12ec1489b2a4a09cdbea05
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d84517ceeeaf70f46b3c205fb9fd509c, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6959d724d9f8c7842a8932598f73e6f6, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 58aefa71d665365408201b83a11890c7, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: cad83bdb0e32ff34086000ee740d82e3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_UseUCBPForAssetBundles: 0
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 164be806af4a1a042bdb133cd9cd5e89, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 20c03f98ed18a5849975914fb3fef458, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 2833285d32ffe1143acf434c8e223705, type: 2}
