@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 368516506}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8029,9 +8029,10 @@ GameObject:
   - component: {fileID: 2058434852}
   - component: {fileID: 2058434851}
   - component: {fileID: 2058434854}
+  - component: {fileID: 2058434855}
   m_Layer: 6
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -8143,6 +8144,28 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 943e0ceb3bd20f44a88ea78417fbb84e, type: 2}
   m_BuildHeightMesh: 0
+--- !u!64 &2058434855
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058434850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &2079738322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3182158742371795655, guid: f62e195aa624e09449db45c7f396d54e, type: 3}
