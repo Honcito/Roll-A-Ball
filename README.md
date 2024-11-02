@@ -15,6 +15,7 @@ This is a simple collection game developed in Unity. The player must gather all 
 - [Gameplay](#gameplay)
 - [Controls](#controls)
 - [Features](#features)
+- [Acknowledgments](#acknowledgments)
 - [Contributions](#contributions)
 - [License](#license)
 
