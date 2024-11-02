@@ -2,6 +2,13 @@
 
 This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of two scenarios: an initial scenario and an open terrain.
 
+## Screenshots
+
+![Scenario Screenshot](Screenshots/screenshot1.png)
+![Collecting Pickup](Screenshots/screenshot2.png)
+![Encountering Enemy](Screenshots/screenshot3.png)
+
+
 ## Table of Contents
 
 - [Requirements](#requirements)
