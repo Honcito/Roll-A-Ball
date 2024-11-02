@@ -4,9 +4,8 @@ This is a simple collection game developed in Unity. The player must gather all 
 
 ## Screenshots
 
-![Scenario Screenshot](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/EastView.JPG)
-![Collecting Pickup](Screenshots/screenshot2.png)
-![Encountering Enemy](Screenshots/screenshot3.png)
+![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/InitScenario.JPG)
+![Full Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/FullScenario.JPG)
 
 
 ## Table of Contents
