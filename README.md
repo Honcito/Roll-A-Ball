@@ -63,6 +63,19 @@ The game features two main scenarios:
 - Simple and intuitive controls for easy gameplay.
 - Information Text: A visual indicator displays the number of pickups remaining to win, helping players strategize their collection.
 
+## Acknowledgments
+
+I would like to express my gratitude to the following contributors and asset creators:
+
+- **Forst**: Thank you for providing excellent assets that enhanced the gameplay experience.
+  - Website: [forst](https://assetstore.unity.com/account/assets)
+  - Contact: [lb69.jimdo.com](http://lb69.jimdo.com/)
+  - Email: [larsbertram69@gmail.com](mailto:larsbertram69@gmail.com)
+  - Publisher Profile: [Unity Asset Store Publisher](https://assetstore.unity.com/publishers/1)
+
+Your work made a significant impact on the quality of this game, and I appreciate your contributions to the Unity community.
+
+
 ## Contributions
 
 If you would like to contribute to this project, please follow these steps:
