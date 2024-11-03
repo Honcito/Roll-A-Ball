@@ -4,9 +4,8 @@ This is a simple collection game developed in Unity. The player must gather all 
 
 ## Screenshots
 
-![Scenario Screenshot](Screenshots/screenshot1.png)
-![Collecting Pickup](Screenshots/screenshot2.png)
-![Encountering Enemy](Screenshots/screenshot3.png)
+![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/InitScenario.JPG)
+![Full Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/FullScenario.JPG)
 
 
 ## Table of Contents
@@ -16,6 +15,7 @@ This is a simple collection game developed in Unity. The player must gather all 
 - [Gameplay](#gameplay)
 - [Controls](#controls)
 - [Features](#features)
+- [Acknowledgments](#acknowledgments)
 - [Contributions](#contributions)
 - [License](#license)
 
@@ -51,7 +51,7 @@ The game features two main scenarios:
 
 ## Controls
 
-- **Movement**: Use the **WASD** or **ARROW KEYS** keys or arrow keys to move the player.
+- **Movement**: Use the **WASD** keys or arrow keys to move the player.
 - **Jump**: Press the **Spacebar** to jump.
 - **Collect pickups**: Walk over the collectible items to gather them.
 
@@ -64,6 +64,19 @@ The game features two main scenarios:
 - Simple and intuitive controls for easy gameplay.
 - Information Text: A visual indicator displays the number of pickups remaining to win, helping players strategize their collection.
 
+## Acknowledgments
+
+I would like to express my gratitude to the following contributors and asset creators:
+
+- **Forst**: Thank you for providing excellent assets that enhanced the gameplay experience.
+  - Website: [forst](https://assetstore.unity.com/account/assets)
+  - Contact: [lb69.jimdo.com](http://lb69.jimdo.com/)
+  - Email: [larsbertram69@gmail.com](mailto:larsbertram69@gmail.com)
+  - Publisher Profile: [Unity Asset Store Publisher](https://assetstore.unity.com/publishers/1)
+
+Your work made a significant impact on the quality of this game, and I appreciate your contributions to the Unity community.
+
+
 ## Contributions
 
 If you would like to contribute to this project, please follow these steps:
@@ -75,5 +88,5 @@ If you would like to contribute to this project, please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
