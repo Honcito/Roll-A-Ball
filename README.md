@@ -36,9 +36,9 @@ Execute Roll A Ball.exe
 
 1. Install Unity (https://unity.com/es)
 2. Clone the repository or download the ZIP file of the project.
- '''
+ ```
     git clone https://github.com/Honcito/Roll-A-Ball.git
- '''
+ ```
 3. Open Unity Hub and select "Open Project."
 4. Navigate to the project folder and select it.
 5. Ensure all required packages are installed via the Package Manager.
