@@ -27,7 +27,7 @@ This is a simple collection game developed in Unity. The player must gather all 
 
 You can download the executable of the game from the following link:
 
-[Download Game Executable](https://drive.google.com/drive/folders/1ujsXL7NyVxbbGmUqS0q0F5he5HRBCMX_?usp=drive_link)
+[Download Game Executable](https://drive.google.com/drive/folders/1rcxuImSF-XW7FqHED08lnkH5jC5jx3mY?usp=sharing)
 
 Execute Roll A Ball.exe
 
