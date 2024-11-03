@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 //using UnityEngine.UI;
 //using System.Threading;
 
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isGameOver; // Para manejar el estado del juego
 
+
     private void Start()
     {
         SetCountText();
@@ -35,7 +39,7 @@ public class PlayerController : MonoBehaviour
         wintText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
         isGameOver = false; // Inicializa el estado del juego
-
+        //restartButton.gameObject.SetActive(false);
       
     }
 
@@ -95,6 +99,7 @@ public class PlayerController : MonoBehaviour
             loseText.text = "You lose!!!";
             // Desactivar el player
             Destroy(gameObject);
+            //restartButton.gameObject.SetActive(true);
         }
     }
 
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
             isGameOver = true; // Marca que el juego ha terminado
             wintText.gameObject.SetActive(true);
             wintText.text = "You Win!!!";
-            // Aquí podrías añadir lógica para reiniciar el juego o mostrar un menú después
+            //restartButton.gameObject.SetActive(true);
         }
     }
 
@@ -134,4 +139,10 @@ public class PlayerController : MonoBehaviour
             isGrounded = false; // El jugador ya no está en el suelo
         }
     }
- }
+
+    /*public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reinicia la escena actual
+    }*/
+
+}
