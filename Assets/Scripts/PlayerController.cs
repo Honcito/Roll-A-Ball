@@ -22,10 +22,15 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isGameOver;
 
+
     private void Start()
     {
-        SetCountText();
         rb = GetComponent<Rigidbody>();
+
+        // Obtenemos el número de pickups necesarios desde el GameManager
+        count = GameManager.Instance.pickupsToWin;
+
+        SetCountText();
         restartButton.gameObject.SetActive(false);
         wintText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
@@ -120,23 +125,39 @@ public class PlayerController : MonoBehaviour
     private void EndGame(bool playerWon)
     {
         isGameOver = true;
+
         if (playerWon)
         {
-            wintText.gameObject.SetActive(true);
-            wintText.text = "You Win!!!";
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            // Si hay más escenas, cargamos la siguiente
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                // Si no hay más escenas, mostramos un mensaje de finalización
+                wintText.gameObject.SetActive(true);
+                wintText.text = "Congratulations! You've completed the game!";
+            }
         }
         else
         {
+            // Si pierdes, mostramos el texto de derrota y el botón de reinicio
             loseText.gameObject.SetActive(true);
             loseText.text = "You lose!!!";
+            restartButton.gameObject.SetActive(true);
         }
-        restartButton.gameObject.SetActive(true);
     }
+
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        count = 20; // Resetea el contador de pickups
+
+        // Obtenemos nuevamente el número de pickups necesarios
+        count = GameManager.Instance.pickupsToWin;
         SetCountText(); // Actualiza la UI
     }
 }
