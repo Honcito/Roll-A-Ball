@@ -1,6 +1,7 @@
 # Roll a Ball
 
-This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of two scenarios: an initial scenario and an open terrain.
+This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of three scenarios
+where the player must complete all of them to win.
 
 ## Screenshots
 
