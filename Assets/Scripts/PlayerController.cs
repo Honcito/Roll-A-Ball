@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;  // Instancia estática para acceso global
+
     public TMP_Text countText;  // Texto para mostrar los pickups restantes
     public TMP_Text scoreText;  // Texto para mostrar el puntaje
     public TMP_Text wintText;   // Texto de victoria
@@ -21,6 +23,19 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
     private bool isGameOver;
+
+    private void Awake()
+    {
+        // Si no existe una instancia, asigna este objeto a la instancia
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);  // Si ya existe una instancia, destruye este objeto
+        }
+    }
 
     private void Start()
     {
@@ -107,7 +122,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     void SetScoreText()
     {
         scoreText.text = "Score: " + GameManager.Instance.GetTotalScore().ToString();
@@ -121,62 +135,38 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Terrain"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;  // El jugador está tocando el suelo o el terreno
+            isGrounded = true;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    // Muestra el mensaje de victoria o derrota y el botón de reinicio
+    private void EndGame(bool won)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Terrain"))
-        {
-            isGrounded = false;  // El jugador ya no está tocando el suelo o el terreno
-        }
-    }
-
-    private void EndGame(bool playerWon)
-    {
-        if (isGameOver) return;  // Evita que el juego termine más de una vez
-
-        isGameOver = true;  // Indica que el juego ha terminado
-
-        // Si ha ganado, muestra el mensaje de victoria
-        if (playerWon)
+        isGameOver = true;
+        if (won)
         {
             wintText.gameObject.SetActive(true);
-            wintText.text = "Congrats! You've completed the game!";
-            loseText.gameObject.SetActive(false);  // Asegúrate de que el texto de derrota no se muestre
         }
         else
         {
             loseText.gameObject.SetActive(true);
-            loseText.text = "You lose!!! Final score: " + GameManager.Instance.GetTotalScore().ToString();
-            wintText.gameObject.SetActive(false);  // Asegúrate de que el texto de victoria no se muestre
-            restartButton.gameObject.SetActive(true);  // Muestra el botón de reinicio
         }
+
+        restartButton.gameObject.SetActive(true); // Muestra el botón de reinicio
+    }
+
+    public void ShowRestartButton()
+    {
+        restartButton.gameObject.SetActive(true);  // Muestra el botón de reinicio
     }
 
     public void RestartGame()
     {
-        // Aquí reiniciamos la escena actual sin avanzar a la siguiente
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        // Reinicia los valores globales del GameManager sin alterar el puntaje
-        GameManager.Instance.ResetCurrentSceneState();
-
-        // Restablece la UI al estado inicial
-        UpdateUI();
-
-        // Reactiva al jugador
-        gameObject.SetActive(true);
-
-        // Resetea el estado del juego
-        isGameOver = false;
-
-        // Asegura que los textos de victoria y derrota estén ocultos al reiniciar
+        GameManager.Instance.RestartGame(); // Reinicia el juego
         wintText.gameObject.SetActive(false);
         loseText.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false); // Oculta el botón de reinicio
     }
 }

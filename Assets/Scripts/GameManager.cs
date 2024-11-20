@@ -117,13 +117,21 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Si no hay más fases, puede reiniciar o finalizar el juego
+            // Si no hay más fases, muestra un mensaje y permite reiniciar
             Debug.Log("Has completado todas las fases!");
-            // Aquí podrías reiniciar el juego o mostrar un mensaje de fin del juego.
+            PlayerController.Instance.ShowRestartButton();  // Muestra el botón de reinicio
         }
     }
 
-    // Reinicia el estado global del juego
+    // Reinicia el juego desde la primera fase
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0); // Vuelve a cargar la primera fase
+        score = 0;
+        pickupsLeft = pickupsToWin;
+    }
+
+    // Resetea el estado global del juego
     public void ResetGame()
     {
         score = 0;
