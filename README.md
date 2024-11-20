@@ -5,9 +5,12 @@ where the player must complete all of them to win.
 
 ## Screenshots
 
+Phase 1
 ![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/InitScenario.JPG)
 ![Full Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/FullScenario.JPG)
 
+Phase 2
+![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/Phase2.JPG)
 
 ## Table of Contents
 
