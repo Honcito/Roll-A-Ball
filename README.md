@@ -10,7 +10,7 @@ Phase 1
 ![Full Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/FullScenario.JPG)
 
 Phase 2
-![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/Phase2.JPG)
+![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/Phase 2.JPG)
 
 ## Table of Contents
 
