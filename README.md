@@ -28,7 +28,7 @@ Phase 3
 
 ## Requirements
 
-- Unity 2022.3.50f1 or higher.
+- Unity 6000.0.24f1 or higher.
 
 ## Download the Game
 
