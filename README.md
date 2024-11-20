@@ -1,12 +1,16 @@
 # Roll a Ball
 
-This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of two scenarios: an initial scenario and an open terrain.
+This is a simple collection game developed in Unity. The player must gather all the pickups while avoiding an enemy. The game consists of three scenarios
+where the player must complete all of them to win.
 
 ## Screenshots
 
+Phase 1
 ![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/InitScenario.JPG)
 ![Full Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/FullScenario.JPG)
 
+Phase 2
+![Init Scenario](https://github.com/Honcito/Roll-A-Ball/blob/main/Assets/Screenshots/Phase 2.JPG)
 
 ## Table of Contents
 
