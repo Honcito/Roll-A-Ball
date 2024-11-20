@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Si no hay más escenas, mostramos un mensaje de finalización
                 wintText.gameObject.SetActive(true);
-                wintText.text = "Congratulations! You've completed the game!";
+                wintText.text = "Congrats! You've completed the game!";
             }
         }
         else

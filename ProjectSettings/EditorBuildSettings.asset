@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: 171ffa06ef12ec1489b2a4a09cdbea05
   - enabled: 1
-    path: Assets/Scenes/MIniiGame2.unity
-    guid: 2241707a9706b464abe822d712602eab
+    path: Assets/Scenes/MiniGame2.unity
+    guid: b03cc41d875a2b54f859f797a17df244
   - enabled: 1
     path: Assets/Scenes/MiniGame3.unity
     guid: c3a516ae214b94a428d31324867f017e
+  - enabled: 0
+    path: Assets/Scenes/MIniiGame2.unity
+    guid: 2241707a9706b464abe822d712602eab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d84517ceeeaf70f46b3c205fb9fd509c, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6959d724d9f8c7842a8932598f73e6f6, type: 2}
